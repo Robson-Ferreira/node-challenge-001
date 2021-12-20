@@ -2,7 +2,7 @@ import User from '../../../../database/models/User';
 import { saltHashPassword } from '../../../common/passwordHelper';
 import UserValidation from './UserValidation';
 
-export default class AuthService {
+export default class UserService {
     async validate(operation, data) {
         await UserValidation()[operation].validate(
             data, { abortEarly: false }
