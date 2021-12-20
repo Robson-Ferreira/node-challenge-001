@@ -1,12 +1,14 @@
 import * as express from 'express';
 
-import NewsRoute from './api/v1/news/NewsRoute';
+import AuthRoute from './api/v1/auth/AuthRoute';
+import UserRoute from './api/v1/user/UserRoute';
 
 export default function routes(app) {
   app.use(
     '/api',
     express
       .Router()
-      .use('/v1/news', NewsRoute)
+      .use('/login', AuthRoute)
+      .use('/sign-up', UserRoute)
   );
 }

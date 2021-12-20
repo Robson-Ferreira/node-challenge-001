@@ -9,6 +9,7 @@ const app = new Express();
 
 export default class ExpressServer {
   constructor() {
+    app.use(bodyParser.json({ limit: process.env.REQUEST_LIMIT || '100kb' }));
     app.use(
       bodyParser.urlencoded({
         extended: true,
